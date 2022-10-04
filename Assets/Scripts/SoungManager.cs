@@ -7,7 +7,7 @@ public class SoungManager : MonoBehaviour
 {
     public static SoungManager Instance;
 
-    enum _soundType
+    public enum _soundType
     {
         BGM1,
         BGM2,
@@ -16,8 +16,10 @@ public class SoungManager : MonoBehaviour
     }
 
     [SerializeField] private AudioSource BGM;
+    private _soundType tampBGM;
 
     [SerializeField] private AudioClip BGM1, BGM2, BGM3, BGM4;
+    private AudioClip nowBGM;
     
     private void Awake()
     {
@@ -27,30 +29,38 @@ public class SoungManager : MonoBehaviour
             DontDestroyOnLoad(Instance);
         }
         else Destroy(Instance);
+
+        tampBGM = _soundType.BGM1;
+        nowBGM = BGM1;
     }
 
-    public void PlaySound(Enum soundType)
+    public void PlaySound(_soundType soundType)
     {
-        switch (soundType)
+        if (soundType != tampBGM)
         {
-            case _soundType.BGM1:
-                BGM.clip = BGM1;
-                break;
-            case _soundType.BGM2:
-                BGM.clip = BGM2;
-                break;
-            case _soundType.BGM3:
-                BGM.clip = BGM3;
-                break;
-            case _soundType.BGM4:
-                BGM.clip = BGM4;
-                break;
-            default:
-                break;
-        }
+            switch (soundType)
+            {
+                case _soundType.BGM1:
+                    nowBGM = BGM1;
+                    break;
+                case _soundType.BGM2:
+                    nowBGM = BGM2;
+                    break;
+                case _soundType.BGM3:
+                    nowBGM = BGM3;
+                    break;
+                case _soundType.BGM4:
+                    nowBGM = BGM4;
+                    break;
+                default:
+                    break;
+            }
 
-        BGM.loop = true;
-        BGM.Play();
+            tampBGM = soundType;
+            BGM.clip = nowBGM;
+            BGM.loop = true;
+            BGM.Play();
+        }
     }
 
     public void ChangeVolume(float value)
