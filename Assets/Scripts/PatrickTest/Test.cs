@@ -13,13 +13,6 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
-        {
-            SoungManager.Instance.PlaySound(SoungManager._soundType.BGM3);
-        }
-        else
-        {
-            SoungManager.Instance.PlaySound(SoungManager._soundType.BGM2);
-        }
+        SoungManager.Instance.PlaySound(SoungManager._soundType.BGM2);
     }
 }
