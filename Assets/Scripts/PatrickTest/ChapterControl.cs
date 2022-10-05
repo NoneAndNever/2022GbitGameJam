@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChapterControl : MonoBehaviour
 {
@@ -15,15 +17,19 @@ public class ChapterControl : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(Instance);
         }
-        else Destroy(Instance);
     }
 
-    public void PlayOneVideo()
+    public void PlayOneVideo(String anim)
     {
         onePlayer.SetActive(true);
         oneInteract.SetActive(false);
-        _animator.Play("Chapter_1");
+        _animator.Play(anim);
+    }
+
+
+    public void LoadScene(String scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }
