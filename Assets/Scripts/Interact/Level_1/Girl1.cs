@@ -62,7 +62,7 @@ public class Girl1 : InteractableItem
         nowState = States.HaveBasket;
         originPosition = transform.position;
         imageComp.SetNativeSize();
-        ChapterControl.Instance.PlayOneVideo();
+        ChapterControl.Instance.PlayOneVideo("Chapter_1");
     }
 
     protected override void ResetPosition()
