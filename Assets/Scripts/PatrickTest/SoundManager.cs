@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoungManager : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    public static SoungManager Instance;
+    public static SoundManager Instance;
 
     public enum _soundType
     {
@@ -17,6 +17,8 @@ public class SoungManager : MonoBehaviour
 
     [SerializeField] private AudioSource BGM;
     private _soundType tampBGM;
+
+    private float volume = 0.25f;
 
     [SerializeField] private AudioClip BGM1, BGM2, BGM3, BGM4;
     private AudioClip nowBGM;
@@ -32,6 +34,11 @@ public class SoungManager : MonoBehaviour
 
         tampBGM = _soundType.BGM1;
         nowBGM = BGM1;
+    }
+
+    private void Start()
+    {
+        AudioListener.volume = volume;
     }
 
     public void PlaySound(_soundType soundType)
@@ -65,6 +72,7 @@ public class SoungManager : MonoBehaviour
 
     public void ChangeVolume(float value)
     {
-        AudioListener.volume = value;
+        volume = value;
+        AudioListener.volume = volume;
     }
 }

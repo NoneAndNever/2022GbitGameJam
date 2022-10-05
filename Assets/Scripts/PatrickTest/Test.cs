@@ -13,6 +13,6 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SoungManager.Instance.PlaySound(SoungManager._soundType.BGM2);
+        SoundManager.Instance.PlaySound(SoundManager._soundType.BGM2);
     }
 }
