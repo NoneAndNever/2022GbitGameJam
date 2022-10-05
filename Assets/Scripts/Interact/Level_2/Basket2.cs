@@ -6,18 +6,13 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
-public class Basket1 : InteractableItem
+public class Basket2 : InteractableItem
 {
     public List<Sprite> sprites;
     public int appleTotal;
-    private int apple = 0;
-    public Transform basketPoint;
+    public int apple = 0;
 
-    protected override void Awake()
-    {
-        base.Awake();
-        imageComp = GetComponent<Image>();
-    }
+    public Sprite ground;
 
     public void AddApple()
     {
@@ -28,13 +23,12 @@ public class Basket1 : InteractableItem
     public override void OnEndDrag(PointerEventData eventData)
     {
         GameObject eventObj = eventData.pointerCurrentRaycast.gameObject;
-        if(!eventObj || targetObj != eventObj || apple != appleTotal || eventObj.GetComponent<Girl1>().nowState != Girl1.States.OnGround) ResetPosition();
+        if(!eventObj || targetObj != eventObj || apple != appleTotal) ResetPosition();
         else
         {
-            transform.position = basketPoint.position;
+            imageComp.sprite = ground;
+            imageComp.SetNativeSize();
             originPosition = transform.position;
-            Debug.Log(originPosition);
-            eventObj.GetComponent<Girl1>().GetBasket();
         }
         imageComp.raycastTarget = true;
         

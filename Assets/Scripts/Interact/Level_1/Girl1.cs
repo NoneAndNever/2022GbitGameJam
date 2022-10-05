@@ -8,46 +8,82 @@ using UnityEngine.UI;
 
 public class Girl1 : InteractableItem
 {
-    public Sprite air;
     public Sprite tree;
     public Sprite ground;
+    
+    public Transform groundPoint;
+    public GameObject hand;
 
+    public enum States
+    {
+        OnTree,
+        OnGround,
+        HaveBasket
+    }
+
+    public States nowState;
 
     protected override void Awake()
     {
         base.Awake();
-        imageComp = GetComponent<Image>();
+        nowState = States.OnTree;
+        Debug.Log(originPosition);
     }
 
     public override void OnDrag(PointerEventData eventData)
     {
+        Debug.Log(nowState);
+        if (nowState != States.OnTree)
+        {
+            return;
+        }
         base.OnDrag(eventData);
-    }
-
-    public override void OnBeginDrag(PointerEventData eventData)
-    {
-        imageComp.sprite = air;
-        imageComp.SetNativeSize();
-        imageComp.raycastTarget = false;
     }
 
     public override void OnEndDrag(PointerEventData eventData)
     {
         GameObject eventObj = eventData.pointerCurrentRaycast.gameObject;
-        if(!eventObj||targetObj!=eventObj) ResetPosition();
+        if(!eventObj || targetObj != eventObj || nowState == States.OnGround) ResetPosition();
         else
         {
             imageComp.sprite = ground;
+            nowState = States.OnGround;
+            transform.position = groundPoint.position;
+            hand.SetActive(true);
+            originPosition = transform.position;
+            Debug.Log(originPosition);
             imageComp.SetNativeSize();
         }
         imageComp.raycastTarget = true;
         
     }
 
+    public void GetBasket()
+    {
+        nowState = States.HaveBasket;
+        originPosition = transform.position;
+        imageComp.SetNativeSize();
+    }
+
     protected override void ResetPosition()
     {
         base.ResetPosition();
-        imageComp.sprite= tree;
+        imageComp.sprite = nowState switch
+        {
+            States.OnTree => tree,
+            States.OnGround => ground
+        };
+        /*switch (nowState)
+        {
+            case States.OnTree:
+                imageComp.sprite= tree;
+                break;
+            case States.OnGround:
+                imageComp.sprite= ground;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }*/
         imageComp.SetNativeSize();
     }
 }

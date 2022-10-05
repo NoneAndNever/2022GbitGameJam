@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
 
     public enum _soundType
     {
+        EMPTY,
         BGM1,
         BGM2,
         BGM3,
@@ -16,7 +17,7 @@ public class SoundManager : MonoBehaviour
     }
 
     [SerializeField] private AudioSource BGM;
-    private _soundType tampBGM;
+    private _soundType tampBGM = _soundType.EMPTY;
 
     private float volume = 0.25f;
 
@@ -32,8 +33,6 @@ public class SoundManager : MonoBehaviour
         }
         else Destroy(Instance);
 
-        tampBGM = _soundType.BGM1;
-        nowBGM = BGM1;
     }
 
     private void Start()
@@ -45,7 +44,14 @@ public class SoundManager : MonoBehaviour
     {
         if (soundType != tampBGM)
         {
-            switch (soundType)
+            nowBGM = soundType switch
+            {
+                _soundType.BGM1 => this.BGM1,
+                _soundType.BGM2 => BGM2,
+                _soundType.BGM3 => BGM3,
+                _soundType.BGM4 => BGM4
+            };
+            /*switch (soundType)
             {
                 case _soundType.BGM1:
                     nowBGM = BGM1;
@@ -59,9 +65,10 @@ public class SoundManager : MonoBehaviour
                 case _soundType.BGM4:
                     nowBGM = BGM4;
                     break;
+                case _soundType.EMPTY:
                 default:
                     break;
-            }
+            }*/
 
             tampBGM = soundType;
             BGM.clip = nowBGM;

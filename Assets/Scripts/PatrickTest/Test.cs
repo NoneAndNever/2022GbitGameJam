@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    public SoundManager._soundType type;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,6 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SoundManager.Instance.PlaySound(SoundManager._soundType.BGM2);
+        SoundManager.Instance.PlaySound(type);
     }
 }
