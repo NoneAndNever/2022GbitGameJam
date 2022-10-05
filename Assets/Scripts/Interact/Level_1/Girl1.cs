@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 
 public class Girl1 : InteractableItem
@@ -9,29 +11,43 @@ public class Girl1 : InteractableItem
     public Sprite air;
     public Sprite tree;
     public Sprite ground;
-    public SpriteRenderer spriteRenderer;
+
 
     protected override void Awake()
     {
         base.Awake();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        imageComp = GetComponent<Image>();
     }
 
-    protected override void OnMouseUp()
+    public override void OnDrag(PointerEventData eventData)
     {
-        base.OnMouseUp();
-        spriteRenderer.sprite = ground;
+        base.OnDrag(eventData);
     }
 
-    protected override void OnMouseDrag()
+    public override void OnBeginDrag(PointerEventData eventData)
     {
-        base.OnMouseDrag();
-        spriteRenderer.sprite = air;
+        imageComp.sprite = air;
+        imageComp.SetNativeSize();
+        imageComp.raycastTarget = false;
+    }
+
+    public override void OnEndDrag(PointerEventData eventData)
+    {
+        GameObject eventObj = eventData.pointerCurrentRaycast.gameObject;
+        if(!eventObj||targetObj!=eventObj) ResetPosition();
+        else
+        {
+            imageComp.sprite = ground;
+            imageComp.SetNativeSize();
+        }
+        imageComp.raycastTarget = true;
+        
     }
 
     protected override void ResetPosition()
     {
         base.ResetPosition();
-        spriteRenderer.sprite = tree;
+        imageComp.sprite= tree;
+        imageComp.SetNativeSize();
     }
 }
