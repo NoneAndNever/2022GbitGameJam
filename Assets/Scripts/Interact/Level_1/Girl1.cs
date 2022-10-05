@@ -27,7 +27,6 @@ public class Girl1 : InteractableItem
     {
         base.Awake();
         nowState = States.OnTree;
-        Debug.Log(originPosition);
     }
 
     public override void OnDrag(PointerEventData eventData)
@@ -51,7 +50,6 @@ public class Girl1 : InteractableItem
             transform.position = groundPoint.position;
             hand.SetActive(true);
             originPosition = transform.position;
-            Debug.Log(originPosition);
             imageComp.SetNativeSize();
         }
         imageComp.raycastTarget = true;

@@ -16,7 +16,8 @@ public class Basket1 : InteractableItem
     protected override void Awake()
     {
         base.Awake();
-        imageComp = GetComponent<Image>();
+        Debug.Log(originPosition);
+        
     }
 
     public void AddApple()
