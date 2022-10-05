@@ -13,6 +13,7 @@ public class Girl1 : InteractableItem
     
     public Transform groundPoint;
     public GameObject hand;
+    
 
     public enum States
     {
@@ -61,6 +62,7 @@ public class Girl1 : InteractableItem
         nowState = States.HaveBasket;
         originPosition = transform.position;
         imageComp.SetNativeSize();
+        ChapterControl.Instance.PlayOneVideo();
     }
 
     protected override void ResetPosition()
