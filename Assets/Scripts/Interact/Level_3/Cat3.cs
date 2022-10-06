@@ -15,6 +15,7 @@ public class Cat3 : InteractableItem
             imageComp.sprite = lick;
             originPosition = transform.position;
             imageComp.SetNativeSize();
+            ChapterControl.Instance.PlayOneVideo("Level3End");
         }
         imageComp.raycastTarget = true;
         
