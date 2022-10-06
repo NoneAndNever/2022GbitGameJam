@@ -9,7 +9,7 @@ public class Cat3 : InteractableItem
     public override void OnEndDrag(PointerEventData eventData)
     {
         GameObject eventObj = eventData.pointerCurrentRaycast.gameObject;
-        if(!eventObj || targetObj != eventObj) ResetPosition();
+        if(!eventObj || targetObj != eventObj || !eventObj.GetComponent<Cup>().onRight) ResetPosition();
         else
         {
             imageComp.sprite = lick;

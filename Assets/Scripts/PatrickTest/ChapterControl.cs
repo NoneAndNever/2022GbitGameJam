@@ -7,8 +7,7 @@ public class ChapterControl : MonoBehaviour
 {
     public Animator _animator;
 
-    public GameObject oneInteract;
-    public GameObject onePlayer;
+    public bool afterPlaying;
 
     public static ChapterControl Instance;
     
@@ -22,8 +21,6 @@ public class ChapterControl : MonoBehaviour
 
     public void PlayOneVideo(String anim)
     {
-        onePlayer.SetActive(true);
-        oneInteract.SetActive(false);
         _animator.Play(anim);
     }
 
@@ -31,5 +28,10 @@ public class ChapterControl : MonoBehaviour
     public void LoadScene(String scene)
     {
         SceneManager.LoadScene(scene);
+    }
+
+    public void SetPlaying(bool afterPlaying)
+    {
+        this.afterPlaying = afterPlaying;
     }
 }

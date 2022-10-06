@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,6 +14,26 @@ public class Basket2 : InteractableItem
     public int apple = 0;
 
     public Sprite ground;
+
+    protected override void Awake()
+    {
+        originPosition = null;
+        imageComp = GetComponent<Image>();
+    }
+
+    private void Update()
+    {
+        if (originPosition == null && ChapterControl.Instance.afterPlaying)
+        {
+            originPosition = transform.position;
+        }
+    }
+
+    public override void OnDrag(PointerEventData eventData)
+    {
+        if(false)
+            base.OnDrag(eventData);
+    }
 
     public void AddApple()
     {
