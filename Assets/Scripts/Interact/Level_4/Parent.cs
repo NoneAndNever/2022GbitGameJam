@@ -4,8 +4,9 @@ using UnityEngine.EventSystems;
 
 public class Parent : InteractableItem
 {
-    public Sprite total;
-    public Sprite half;
+    public Sprite stand;
+    public Sprite work;
+    public Vector2 position;
 
     public bool inPlace = false;
     
@@ -14,7 +15,15 @@ public class Parent : InteractableItem
         if (!inPlace)
         {
             base.OnDrag(eventData);
-            imageComp.sprite = total;
+            var obj = eventData.pointerCurrentRaycast.gameObject;
+            if (obj)
+            {
+                Debug.Log(obj.name);
+                //Debug.Log(transform.position);
+            }
+            
+            imageComp.sprite = stand;
+            imageComp.SetNativeSize();
         }
     }
 
@@ -24,10 +33,12 @@ public class Parent : InteractableItem
         if(!eventObj || targetObj != eventObj) ResetPosition();
         else
         {
-            imageComp.sprite = half;
+            imageComp.sprite = stand;
             originPosition = transform.position;
+            transform.position = position;
             imageComp.SetNativeSize();
             inPlace = !inPlace;
+            //this.enabled = false;
         }
         imageComp.raycastTarget = true;
         
@@ -36,7 +47,7 @@ public class Parent : InteractableItem
     protected override void ResetPosition()
     {
         base.ResetPosition();
-        imageComp.sprite = half;
+        imageComp.sprite = work;
         imageComp.SetNativeSize();
     }
 }
