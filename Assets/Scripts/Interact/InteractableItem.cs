@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class InteractableItem : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
 
-    [SerializeField] protected Vector3 originPosition;
+    [SerializeField] protected Vector3? originPosition;
     public Image imageComp;
     [SerializeField] protected GameObject targetObj;//需要交互的物体
 
@@ -21,7 +21,7 @@ public class InteractableItem : MonoBehaviour,IDragHandler,IBeginDragHandler,IEn
 
     protected virtual void ResetPosition()
     {
-        transform.position = originPosition;
+        transform.position = (Vector3)originPosition;
     }
 
     public virtual void OnDrag(PointerEventData eventData)
@@ -32,6 +32,7 @@ public class InteractableItem : MonoBehaviour,IDragHandler,IBeginDragHandler,IEn
     public virtual void OnBeginDrag(PointerEventData eventData)
     {
         imageComp.raycastTarget = false;
+        originPosition = transform.position;
     }
 
     public virtual void OnEndDrag(PointerEventData eventData)

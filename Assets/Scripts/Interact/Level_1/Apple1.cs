@@ -10,6 +10,11 @@ public class Apple1 : InteractableItem
         imageComp = GetComponent<Image>();
     }
 
+    public override void OnBeginDrag(PointerEventData eventData)
+    {
+        base.OnBeginDrag(eventData);
+    }
+
     public override void OnEndDrag(PointerEventData eventData)
     {
         GameObject eventObj = eventData.pointerCurrentRaycast.gameObject;
