@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class Cup : InteractableItem
 {
     public bool onRight;
+    public Transform milkPoint;
     
     protected override void Awake()
     {
@@ -35,6 +36,7 @@ public class Cup : InteractableItem
         if(!eventObj || targetObj != eventObj) ResetPosition();
         else
         {
+            transform.position = milkPoint.position;
             originPosition = transform.position;
             imageComp.SetNativeSize();
             eventObj.GetComponent<Image>().raycastTarget = false;
