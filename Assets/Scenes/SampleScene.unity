@@ -1141,30 +1141,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 599579408}
     m_Modifications:
-    - target: {fileID: 4661068004348160439, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661068004348160439, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661068004348160439, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661068004662197196, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661068004662197196, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661068004702190715, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 599579411}
     - target: {fileID: 4661068005340382044, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -1257,10 +1233,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4661068005847532173, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 599579411}
+    - target: {fileID: 6664089839384376228, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987290533155144844, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987290533155144844, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
 --- !u!1 &190152874

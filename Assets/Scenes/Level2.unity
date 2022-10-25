@@ -14663,10 +14663,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 599579411}
-    - target: {fileID: 4661068004702190715, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Continue
-      objectReference: {fileID: 0}
     - target: {fileID: 4661068005340382044, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -14759,10 +14755,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 599579411}
-    - target: {fileID: 4661068005847532173, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Exit
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
 --- !u!1 &1592354758

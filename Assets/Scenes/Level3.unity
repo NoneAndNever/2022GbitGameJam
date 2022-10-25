@@ -2154,6 +2154,7 @@ MonoBehaviour:
   mom: {fileID: 1815614782}
   dad: {fileID: 614567157}
   anim: {fileID: 0}
+  pauseButton: {fileID: 56141862}
 --- !u!114 &599579411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3891,6 +3892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 4661068005340382044, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4661068005340382045, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3982,6 +3987,18 @@ PrefabInstance:
     - target: {fileID: 4661068005847532173, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664089839384376228, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987290533155144844, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987290533155144844, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ffb2cb7d3279174eaa7845f19025f23, type: 3}
@@ -5777,6 +5794,7 @@ GameObject:
   - component: {fileID: 1793869058}
   - component: {fileID: 1793869057}
   - component: {fileID: 1793869056}
+  - component: {fileID: 1793869059}
   m_Layer: 5
   m_Name: End-------DontMove
   m_TagString: Untagged
@@ -5863,6 +5881,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793869054}
   m_CullTransparentMesh: 1
+--- !u!114 &1793869059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793869054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0bfb5324efd8d54c94c9fa43abb8286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1794538619
 GameObject:
   m_ObjectHideFlags: 0
@@ -6344,6 +6374,10 @@ PrefabInstance:
     - target: {fileID: 8040430837560952455, guid: cdb61b2e82c91cb479a5e54557dc017d, type: 3}
       propertyPath: m_Name
       value: PlayMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040430837560952455, guid: cdb61b2e82c91cb479a5e54557dc017d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8040430837666290059, guid: cdb61b2e82c91cb479a5e54557dc017d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

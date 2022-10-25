@@ -8,6 +8,8 @@ public class C4 : MonoBehaviour
     public Parent mom;
     public Parent dad;
     public Animator anim;
+    public GameObject pauseButton;
+    
 
     private void Start()
     {
@@ -19,7 +21,8 @@ public class C4 : MonoBehaviour
         if (mom.inPlace && dad.inPlace)
         {
             mom.enabled = false;
-            dad.enabled = true;
+            dad.enabled = false;
+            pauseButton.SetActive(false);
             anim.Play("End");
             
         }
