@@ -1228,7 +1228,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e254d57642b097941b94f2f8dc389096, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7a1be36cc255e24a921aff9ec1e6615, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1511,6 +1511,7 @@ GameObject:
   - component: {fileID: 450328008}
   - component: {fileID: 450328007}
   - component: {fileID: 450328006}
+  - component: {fileID: 450328010}
   m_Layer: 5
   m_Name: mom (2)
   m_TagString: Untagged
@@ -1609,6 +1610,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450328004}
   m_CullTransparentMesh: 1
+--- !u!114 &450328010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450328004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d63135e81bf1b44a8c9c3cd096c2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &507342731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,7 +2277,7 @@ MonoBehaviour:
   targetObj: {fileID: 1829055650}
   stand: {fileID: 21300000, guid: 92bf080d60e599140ad1ce12c6b38419, type: 3}
   work: {fileID: 21300000, guid: df870f8f303c0434286be9d0e67ecb68, type: 3}
-  position: {x: 829.5, y: 397}
+  position: {x: 1468.5, y: 702.88}
   inPlace: 0
 --- !u!1 &729054500
 GameObject:
@@ -5475,6 +5488,7 @@ GameObject:
   - component: {fileID: 1714731738}
   - component: {fileID: 1714731737}
   - component: {fileID: 1714731736}
+  - component: {fileID: 1714731739}
   m_Layer: 5
   m_Name: dad (2)
   m_TagString: Untagged
@@ -5555,6 +5569,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714731734}
   m_CullTransparentMesh: 1
+--- !u!114 &1714731739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714731734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d63135e81bf1b44a8c9c3cd096c2d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1744626645
 GameObject:
   m_ObjectHideFlags: 0
@@ -6130,7 +6156,7 @@ MonoBehaviour:
   targetObj: {fileID: 1829055650}
   stand: {fileID: 21300000, guid: 654822e8d4878614fb8dc2285f5bd451, type: 3}
   work: {fileID: 21300000, guid: 8da8130603dbe9247a4fc6f4586945f1, type: 3}
-  position: {x: 754.5, y: 362.5}
+  position: {x: 1335.77, y: 641.8}
   inPlace: 0
 --- !u!1 &1829055650
 GameObject:
